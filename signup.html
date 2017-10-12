@@ -1,0 +1,120 @@
+<html>
+<head>
+<style>
+	input[type=submit] {
+    width: 13em;  height: 3em;
+    font-size:15px;
+}
+.navbar{
+position:fixed;
+text-decoration:none;
+}
+ ul{
+list-style:none;
+padding:0px;
+
+}
+li{
+background-color:black;
+color:white;
+text-align:center;
+width:319px;
+line-height:50px;
+height:50px;
+float:left;
+opacity:0.8;
+margin-right:2px;
+
+
+}
+*{
+margin:0px;
+padding:0px;
+
+}
+li a{
+text-decoration:none;
+color:white;
+}
+ ul li:hover{
+background-color:brown;
+
+}
+ ul ul{
+display:none;
+text-decoration:none;
+
+}
+ ul li:hover > ul{
+display:block
+
+}
+ul ul li:hover{
+background-color:grey;
+text-decoration:none;
+}
+ul ul li a{
+text-decoration:none;
+color:white;
+}
+</style>
+<script>
+function myfunc() {
+    var pass1 = document.getElementById("password").value;
+    var pass2 = document.getElementById("cpassword").value;
+    var mob = document.getElementById("mobile").value;
+    var ok = true;
+    if (pass1 != pass2) {
+        //alert("Passwords Do not match");
+        document.getElementById("password").style.borderColor = "#E34234";
+        document.getElementById("cpassword").style.borderColor = "#E34234";
+        ok = false;
+     	alert("Passwords don't match");  
+     	 
+    }
+   
+    if(mob>9999999999 || mob<1000000000)
+    {
+    	alert("Mobile number should be of 10 digits only");
+    	ok=false;
+    }
+    return ok;
+}
+
+</script>
+</head>
+<body>
+<img src='images/food2.jpg' style='position:fixed;top:0px;left:0px;height:100%;width:100%;z-index:-1;'>
+
+<div style="padding-top:80px;">
+	<div style=" background-color:black;color:white;opacity:0.8;padding:30px;margin-left:330px;margin-right:330px;margin-bottom:20px;height:500px;" >
+	
+	<h2 ><b>SignUp Page</b></h2><br>
+	<form action="insert2.php" method="post" onsubmit="return myfunc()">	
+	<label>Name:</label><br>
+	<input type="text" name="name" id="name" placeholder="Enter Username"  required >
+	<br><br>
+	<label>Email:</label><br>
+	<input type="email" name="email" id="email" placeholder="Enter Email" required>
+	<br><br>
+	<label>Mobile:</label><br>
+	<input type="text" name="mobile" id="mobile" placeholder="Enter mobile number" required>
+	<br><br>
+	<label>Address:</label><br>
+	<textarea name="address" id="address" placeholder="Enter address" required></textarea>
+	<br><br>
+	Password:<br>
+	<input type="password" name="password" id ="password"  placeholder="Enter Password" required>
+	<br><br>
+	Confirm Password:<br>
+	<input type="password" name="cpassword" id ="cpassword" placeholder="Confirm Password" required>
+	<br><br>
+	<br>
+	<input type="submit" name="submit" value="Submit" ";>
+	<br><br>
+	
+</div>
+</div>
+	</form>
+</body>
+</html>

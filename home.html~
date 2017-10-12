@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+<style>
+*{
+margin:0px;
+padding:0px;
+
+}
+.parallax{
+ /*background-image: url('food2.jpg');*/
+ min-height:500px;
+ background-repeat:no-repeat;
+ background-size:cover;
+ background-position:center;
+
+}
+.navbar{
+position:fixed;
+text-decoration:none;
+}
+ ul{
+list-style:none;
+padding:0px;
+
+}
+li{
+background-color:black;
+color:white;
+text-align:center;
+width:253px;
+line-height:50px;
+height:50px;
+float:left;
+opacity:0.8;
+margin-right:2px;
+
+
+}
+li a{
+text-decoration:none;
+color:white;
+}
+ ul li:hover{
+background-color:brown;
+
+}
+ ul ul{
+display:none;
+text-decoration:none;
+
+}
+ ul li:hover > ul{
+display:block
+
+}
+ul ul li:hover{
+background-color:grey;
+text-decoration:none;
+}
+ul ul li a{
+text-decoration:none;
+color:white;
+}
+.modal{
+display:none;
+position:fixed;
+z-index:1;
+padding-top:100px;
+left:0;
+top:0;
+width:100%;
+height:100%;
+overflow:auto;
+background-color:rgb(0,0,0);
+background-color:rgba(0,0,0,0.8);
+
+}
+.modal-content{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 250px;
+    height:300px;
+    
+}
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+<img src='images/food2.jpg' style='position:fixed;top:0px;left:0px;height:100%;width:100%;z-index:-1;'>
+<div class="navbar">
+<ul>
+	<li><a style="display:block;">Home</a></li>
+	<li><a style="display:block;">Menu</a>
+		<ul>
+			<li><a style="display:block;" href="sandwich.php">Sandwiches</a></li>
+			<li><a style="display:block;" href="burger.php">Burgers</a></li>
+			<li><a style="display:block;" href="pizza.php">Pizza</a></li>
+			<li><a style="display:block;" href="beverages.php">Beverages</a></li>
+			<li><a style="display:block;" href="desserts.php">Desserts</a></li>
+		</ul>
+	</li>
+	<li ><a style="display:block;" id="mybtn">Order</a></li>
+<li><a style="display:block;">Contact Us</a></li>
+<li><a href="adminlog.php" style="display:block;" >Admin</a></li>
+</ul>
+</div>
+
+<i><center><p style="color:red;text-align:center;font-size:50px;position:fixed;margin-left:500px;margin-top:250px;">Delight Cafe</p></center></i>
+<form method="post" action="mapping.php">
+<div id="mymodal" class="modal">
+ <div class="modal-content">
+	<span class="close">&times;</span>
+	<p>
+	<center><h3>LOGIN </h3></center>
+	<br>
+	Username:<br>
+	<input type="email" name="uname" id="uname" placeholder="Enter email address">
+	<br>
+	<br>
+	Password:<br>
+	<input type="password" name="pass" id="pass" placeholder="Enter password">
+	<br><br><br>
+	<div >
+	<!--<center><button style="padding:10px;background-color:blue;color:white;box-size:20px;">Login</button></center>-->
+	<input type=submit value="Login">
+	</div>
+	<br>
+	<br>
+	<a style="color:blue;text-decoration:none;" href="signup.html">Sign Up</a>
+	
+	<a style="padding-left:30px;text-decoration:none;color:blue;" href="forgot.php";>Forgot Password?</a>
+
+	</p>
+	
+</div>
+</div>
+</form>
+<script>
+var modal=document.getElementById("mymodal");
+var btn = document.getElementById("mybtn");
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<div class="parallax"></div>
+<div style="background-color:black;color:white;height:600px;opacity:0.8;">
+<center style="font-size:40px;padding-top:50px;">WELCOME!!</center>
+<p style="padding:60px;font-size:20px;">Delight Cafe brings you different types of mouth watering pizzas,burgers,sandwiches,beverages and desserts.Order online and get your favourite food at your door in just some minutes.For further details please refer to Contact Us.</p>
+</div>
+<div class="parallax"></div>
+</body>
+
+</html>
